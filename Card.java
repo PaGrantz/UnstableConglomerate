@@ -6,26 +6,35 @@ class Card{
 	private int value;
 	private int order;
 	//Static fields
-	public String HEART = heart;
-	public String DIAMOND = diamond;
-	public String CLUB = club;
-	public String SPADE = spade;
+	public static String HEART = "heart";
+	public static String DIAMOND = "diamond";
+	public static String CLUB = "club";
+	public static String SPADE = "spade";
 	//-------------------
 	
 	//Constructors
 	public Card(){
-		suit = null;
-		face=null;
-		faceCard=false;
-		value=null;
-		order = null;
 	}
 	public Card(String s, int v){
 		suit = s;
-		faceCard = false;
-		value = v;
-		face = "num";
 		order = v;
+		if(v==1){
+			faceCard = false;
+			value = 1;
+			face = "A";
+		}
+		else if(v/11==0){
+			faceCard = false;
+			value = v;
+			face = "num";
+		}
+		else{
+			faceCard = true;
+			value = 10;
+			if(v == 13) {face = "K";}
+			if(v == 12) {face = "Q";}
+			if(v == 11) {face = "J";}
+		}
 	}
 	public Card(String s, String f){
 		suit = s;
@@ -33,10 +42,10 @@ class Card{
 		value = 10;
 		face = f;
 		switch (f){
-			case K: order = 13;
-			case Q: order = 12;
-			case J: order = 11;
-			case A: order = 1;
+			case "K": order = 13;
+			case "Q": order = 12;
+			case "J": order = 11;
+			case "A": order = 1;
 		}
 	}
 	//--------------------
