@@ -23,22 +23,23 @@ class Card{
 			value = 1;
 			face = "A";
 		}
-		else if(v/11==0){
-			faceCard = false;
-			value = v;
-			face = "num";
-		}
-		else{
+		else if(v==11 || v==12 || v==13){
 			faceCard = true;
 			value = 10;
 			if(v == 13) {face = "K";}
 			if(v == 12) {face = "Q";}
 			if(v == 11) {face = "J";}
 		}
+		else{
+			faceCard = false;
+			value = v;
+			face = "num";
+		}
 	}
 	public Card(String s, String f){
 		suit = s;
-		faceCard = true;
+		if(f.equals("K") || f.equals("Q") || f.equals("J")){
+			faceCard = true;}
 		value = 10;
 		face = f;
 		switch (f){

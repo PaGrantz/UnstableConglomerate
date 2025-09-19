@@ -29,7 +29,9 @@ class Deck{
 		for(int i=0;i<deck.size();i++){
 			result+=deck.get(i).toString()+ ", ";
 		}
-		return result;
+		if(result.length()<=1){
+			return result;}
+		return result.substring(0,result.length()-2);
 	}
 	//----------
 
