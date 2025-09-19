@@ -10,6 +10,7 @@ class Card{
 	public static String DIAMOND = "diamond";
 	public static String CLUB = "club";
 	public static String SPADE = "spade";
+	public static String[] suits = {HEART,DIAMOND,CLUB,SPADE};
 	//-------------------
 	
 	//Constructors

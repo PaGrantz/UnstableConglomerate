@@ -24,6 +24,26 @@ class Deck{
 	}
 
 	//methods
+
+	public void shuffle(){
+		Collections.shuffle(deck);
+	}
+
+	public Card deal(){
+		return deck.remove(0);
+	}
+
+	public void add(Card c){
+		deck.add(c);
+	}
+
+	/*public void sortByRank(){
+		ArrayList<Card> sorted = new ArrayList<>();
+		Card max;
+		for()
+
+	}*/
+
 	public String toString(){
 		String result = "";
 		for(int i=0;i<deck.size();i++){
@@ -35,10 +55,10 @@ class Deck{
 	}
 	//----------
 
-	public static void main(String[] args){
+	/*public static void main(String[] args){
 		Deck deck = new Deck(13);
 		System.out.println(deck);
-	}
+	}*/
 
 
 }
